@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Board Game</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <div id="header">
+        <img src="/header.jpeg" alt="Header" id="header-image">
+    </div>
+
+    <!-- Lobby Section -->
+    <div id="lobby">
+        <div id="lobby-container">
+            <input type="text" id="player-name" placeholder="Enter your name">
+            <button id="host-game">Host Game</button>
+            <input type="text" id="session-id" placeholder="Session ID">
+            <button id="join-game">Join Game</button>
+            <div id="session-info"></div>
+            <button id="copy-session-id" style="display: none;">Copy Session ID</button>
+            <div id="player-list">
+                <!-- Player list with icons and lives will be dynamically added here -->
+            </div>
+            <button id="start-game" style="display: none;">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Game Section -->
+    <div id="game" style="display: none;">
+        <div id="controls-container">
+            <div id="player-status">
+                <div id="lives-container">
+                    <div id="lives-images">
+                        <!-- Lives images will be dynamically added here -->
+                    </div>
+                </div>
+                <div id="items-container">Items: <span id="items-list"></span></div>
+            </div>
+            <div id="buttons-container">
+                <button id="toss-coin" style="display: none;">Toss Coin</button>
+                <div id="coin-toss-result">
+                    <!-- Coin toss result will be displayed here -->
+                </div>
+                <button id="end-game">End Game</button>
+            </div>
+        </div>
+        <div id="game-board-container">
+            <div id="game-board-wrapper">
+                <img id="game-board" src="/game_board.jpeg" alt="Game Board">
+                <div id="pieces-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/game.js"></script>
+</body>
+</html>
